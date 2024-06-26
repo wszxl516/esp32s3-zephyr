@@ -16,11 +16,7 @@ K_THREAD_DEFINE(display_task_p, 1024, display_task, NULL, NULL, NULL, 5, 0, 0);
 int main(void) {
   k_thread_name_set(led_task_p, "led_task");
   k_thread_name_set(display_task_p, "display_task");
-  const char *task_name = CURRENT_NAME();
-  for (;;) {
-    LOG_INF("in task: %s\n", task_name);
-    k_msleep(1000);
-  }
+  LOG_INF("start join other tasks!\n");
   k_thread_join(led_task_p, K_NO_WAIT);
   k_thread_join(display_task_p, K_NO_WAIT);
   return 0;

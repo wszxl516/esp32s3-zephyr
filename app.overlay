@@ -5,7 +5,7 @@
 		zephyr,display = &ssd1306_ssd1306_128x64;
 	};
 	aliases {
-		led-strip = &led_strip;
+		rgb-led = &led_strip;
 	};
 };
 
